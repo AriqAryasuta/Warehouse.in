@@ -5,6 +5,6 @@ Warehouse Management App
 Nama Kelompok : Gudang.in
 <br/>
 <br/>
-Ketua Kelompok : Rizky Junian Nugroho - 20/460564/TK/51153 <br/>
+Ketua Kelompok : Rizky Junian Nugroho <br/>
 Nama Anggota 1 : Ariq Tsaqif Aryasuta <br/>
 Nama Anggota 2 : Rizky Intan Nurlita <br/>
