@@ -7,4 +7,4 @@ Nama Kelompok : Gudang.in
 <br/>
 Ketua Kelompok : Rizky Junian Nugroho <br/>
 Nama Anggota 1 : Ariq Tsaqif Aryasuta <br/>
-Nama Anggota 2 : Rizky Intan Nurlita <br/>
+Nama Anggota 2 : Rizky Intan Nurlita  - 20/456379/TK/50509<br/>
