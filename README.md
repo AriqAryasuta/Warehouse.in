@@ -10,3 +10,4 @@ Ketua Kelompok : Rizky Junian Nugroho<br/>
 Nama Anggota 1 : Ariq Tsaqif Aryasuta - 20/460541/TK/51130<br/>
 Nama Anggota 2 : Rizky Intan Nurlita - 20/456379/TK/50509<br/>
 
+
