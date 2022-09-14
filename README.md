@@ -1,13 +1,5 @@
 # WAREHOUSE.IN
-
-## Warehouse Management App
-
-<br/>
-<br/>
-
-## GUDANG.IN<br/>
-
-## Anggota kelompok</br>
+## GUDANG.IN Anggota kelompok</br>
 
 Ketua Kelompok : Rizky Junian Nugroho - 20/460564/TK/51153<br/>
 Anggota 1 : Ariq Tsaqif Aryasuta - 20/460541/TK/51130<br/>
