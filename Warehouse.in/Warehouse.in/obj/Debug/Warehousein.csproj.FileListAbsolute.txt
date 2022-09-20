@@ -1,0 +1,10 @@
+D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehouse.in\bin\Debug\Warehouse.@in.exe.config
+D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehouse.in\bin\Debug\Warehouse.@in.exe
+D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehouse.in\bin\Debug\Warehouse.@in.pdb
+D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehouse.in\obj\Debug\Warehousein.csproj.AssemblyReference.cache
+D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehouse.in\obj\Debug\Warehousein.csproj.SuggestedBindingRedirects.cache
+D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.in.Properties.Resources.resources
+D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehouse.in\obj\Debug\Warehousein.csproj.GenerateResource.cache
+D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehouse.in\obj\Debug\Warehousein.csproj.CoreCompileInputs.cache
+D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.@in.exe
+D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.@in.pdb
