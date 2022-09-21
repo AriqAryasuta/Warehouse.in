@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Warehouse.@in
 {
-    internal class Person
+    public class Person
     {
         private string _username;
         private string _password;
