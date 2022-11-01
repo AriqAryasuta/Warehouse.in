@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Warehouse.@in;
 
 namespace Warehouse.@in
 {
@@ -16,7 +17,7 @@ namespace Warehouse.@in
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Homepage());
+            Application.Run(new formLogin());
         }
     }
 }
