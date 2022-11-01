@@ -1,0 +1,4 @@
+C:\Users\Microsoft\source\repos\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.in.csproj.AssemblyReference.cache
+C:\Users\Microsoft\source\repos\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.in.Properties.Resources.resources
+C:\Users\Microsoft\source\repos\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.in.csproj.GenerateResource.cache
+C:\Users\Microsoft\source\repos\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.in.csproj.CoreCompileInputs.cache

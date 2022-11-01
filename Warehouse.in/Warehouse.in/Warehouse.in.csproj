@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
+    <Compile Include="ItemWmClass.cs" />
     <Compile Include="person.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
