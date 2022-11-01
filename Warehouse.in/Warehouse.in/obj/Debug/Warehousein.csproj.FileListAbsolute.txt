@@ -8,3 +8,26 @@ D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehou
 D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehouse.in\obj\Debug\Warehousein.csproj.CoreCompileInputs.cache
 D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.@in.exe
 D:\Perkuliahan\Semester 5\Proyek Junior Teknologi Informasi\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.@in.pdb
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\bin\Debug\Warehouse.@in.exe.config
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\bin\Debug\Warehouse.@in.exe
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\bin\Debug\Warehouse.@in.pdb
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\bin\Debug\ComponentFactory.Krypton.Docking.dll
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\bin\Debug\ComponentFactory.Krypton.Navigator.dll
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\bin\Debug\ComponentFactory.Krypton.Ribbon.dll
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\bin\Debug\ComponentFactory.Krypton.Workspace.dll
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\bin\Debug\ComponentFactory.Krypton.Docking.pdb
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\bin\Debug\ComponentFactory.Krypton.Navigator.pdb
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\bin\Debug\ComponentFactory.Krypton.Ribbon.pdb
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\bin\Debug\ComponentFactory.Krypton.Workspace.pdb
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehousein.csproj.AssemblyReference.cache
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehousein.csproj.SuggestedBindingRedirects.cache
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.in.Properties.Resources.resources
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehousein.csproj.GenerateResource.cache
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehousein.csproj.CoreCompileInputs.cache
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehousein.csproj.CopyComplete
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.@in.exe
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.@in.pdb
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.in.formLogin.resources
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.in.formHomepage.resources
