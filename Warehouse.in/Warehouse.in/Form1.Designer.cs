@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.buttonProducts = new System.Windows.Forms.Button();
             this.buttonRequest = new System.Windows.Forms.Button();
             this.buttonStock = new System.Windows.Forms.Button();
             this.buttonHome = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelDesktopPanel = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
@@ -51,21 +51,11 @@
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(195, 681);
+            this.panelMenu.Size = new System.Drawing.Size(260, 838);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(195, 162);
-            this.panel1.TabIndex = 2;
             // 
             // buttonProducts
             // 
@@ -74,10 +64,10 @@
             this.buttonProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonProducts.Image = global::Warehouse.@in.Properties.Resources.icons8_open_box_32;
             this.buttonProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProducts.Location = new System.Drawing.Point(0, 333);
-            this.buttonProducts.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonProducts.Location = new System.Drawing.Point(0, 409);
+            this.buttonProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonProducts.Name = "buttonProducts";
-            this.buttonProducts.Size = new System.Drawing.Size(195, 57);
+            this.buttonProducts.Size = new System.Drawing.Size(260, 70);
             this.buttonProducts.TabIndex = 5;
             this.buttonProducts.Text = "Products";
             this.buttonProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -92,10 +82,10 @@
             this.buttonRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRequest.Image = global::Warehouse.@in.Properties.Resources.icons8_unpacking_32;
             this.buttonRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRequest.Location = new System.Drawing.Point(0, 276);
-            this.buttonRequest.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRequest.Location = new System.Drawing.Point(0, 339);
+            this.buttonRequest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRequest.Name = "buttonRequest";
-            this.buttonRequest.Size = new System.Drawing.Size(195, 57);
+            this.buttonRequest.Size = new System.Drawing.Size(260, 70);
             this.buttonRequest.TabIndex = 4;
             this.buttonRequest.Text = "Request";
             this.buttonRequest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -110,10 +100,10 @@
             this.buttonStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStock.Image = global::Warehouse.@in.Properties.Resources.icons8_shipping_product_32;
             this.buttonStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonStock.Location = new System.Drawing.Point(0, 219);
-            this.buttonStock.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonStock.Location = new System.Drawing.Point(0, 269);
+            this.buttonStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonStock.Name = "buttonStock";
-            this.buttonStock.Size = new System.Drawing.Size(195, 57);
+            this.buttonStock.Size = new System.Drawing.Size(260, 70);
             this.buttonStock.TabIndex = 3;
             this.buttonStock.Text = "Stock";
             this.buttonStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -128,10 +118,10 @@
             this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHome.Image = global::Warehouse.@in.Properties.Resources.icons8_home_page_32;
             this.buttonHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonHome.Location = new System.Drawing.Point(0, 162);
-            this.buttonHome.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonHome.Location = new System.Drawing.Point(0, 199);
+            this.buttonHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(195, 57);
+            this.buttonHome.Size = new System.Drawing.Size(260, 70);
             this.buttonHome.TabIndex = 0;
             this.buttonHome.Text = "Home";
             this.buttonHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -139,13 +129,23 @@
             this.buttonHome.UseVisualStyleBackColor = true;
             this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(260, 199);
+            this.panel1.TabIndex = 2;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Warehouse.@in.Properties.Resources.Screenshot_2022_11_01_214456;
-            this.pictureBox2.Location = new System.Drawing.Point(22, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(29, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(150, 162);
+            this.pictureBox2.Size = new System.Drawing.Size(200, 199);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -153,21 +153,22 @@
             // panelDesktopPanel
             // 
             this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPanel.Location = new System.Drawing.Point(195, 0);
+            this.panelDesktopPanel.Location = new System.Drawing.Point(260, 0);
+            this.panelDesktopPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(1069, 681);
+            this.panelDesktopPanel.Size = new System.Drawing.Size(1425, 838);
             this.panelDesktopPanel.TabIndex = 1;
             // 
             // Homepage
             // 
             this.AccessibleDescription = "";
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(187)))));
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1685, 838);
             this.Controls.Add(this.panelDesktopPanel);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Homepage";
             this.Text = "Warehouse.in";
             this.Load += new System.EventHandler(this.Form1_Load);

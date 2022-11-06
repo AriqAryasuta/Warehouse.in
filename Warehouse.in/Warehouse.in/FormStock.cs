@@ -7,16 +7,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace Warehouse.@in
 {
     public partial class FormStock : Form
 {
-    public FormStock()
-    {
-     InitializeComponent();
-    }
+        public FormStock()
+        {
+            InitializeComponent();
+        }
+        private NpgsqlConnection conn;
+        string connstring = "Host=localhost;Port=5432;Username=postgres;Password=atA_251201;Database=WarehouseinDb";
+        public DataTable dt;
+        public static NpgsqlCommand cmd;
+        private string sql = null;
+        private DataGridViewRow r;
+   
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            conn = new NpgsqlConnection(connstring);
+            try
+            {
+                conn.Open();
+                dgvData.DataSource = null;
+                sql = "select * from st_select()";
+                cmd = new NpgsqlCommand(sql, conn);
+                dt = new DataTable();
+                NpgsqlDataReader rd = cmd.ExecuteReader();
+                dt.Load(rd);
+                dgvData.DataSource = dt;
 
-    
-}
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+    }
 }
