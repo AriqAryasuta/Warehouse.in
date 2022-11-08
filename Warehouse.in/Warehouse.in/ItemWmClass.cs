@@ -1,65 +1,48 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Warehousein
+namespace Warehouse.@in
 {
     class WarehouseManager
-{
-        private int _wmId;
+    {
 
-        public int WMID
-        {
-            get { return _wmId; }
-        }
-
-        public void CheckRequest(item)
-        {
-
-        }
-
-        public void InputItem(item)
-        {
-
-        }
-
-        public void SendUpdate(item)
-        {
-
-        }
+        
     }
 
     class Item
     {
-        private int _itemId;
-        private string _name;
-        private int _quantity;
-        private string _category;
+        private string id;
+        private string items;
+        private int quantity;
+        private string category;
 
-        public int ItemID
-        {
-            get { return _itemId; }
-        }
+        public string Id { get => id; set => id = value; }
+        public string Items { get => items; set => items = value; }
+        public int Quantity { get => quantity; set => quantity = value; }
+        public string Category { get => category; set => category = value; }
+    }
 
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
+    class food : Item
+    {
+        private DateTime expiredDate;
 
-        public int Quantity
-        {
-            get { return _quantity; }
-            set { _quantity = value; }
-        }
+        public DateTime ExpiredDate { get => expiredDate; set => expiredDate = value; }
+    }
+    class beverage : Item
+    {
+        private int capacity;
 
-        public string Category
-        {
-            get { return _category; }
-            set { _category = value; }
-        }
+        public int Capacity { get => capacity; set => capacity = value; }
+    }
+
+    class furniture : Item
+    {
+        private string madeOf;
+
+        public string MadeOf { get => madeOf; set => madeOf = value; }
     }
 }
-*/
