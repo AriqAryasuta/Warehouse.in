@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace Warehouse.@in
 {
-    public partial class Form2 : Form
+    public partial class RequestForm : Form
 {
-    
+    public RequestForm()
+    {
+        InitializeComponent();
+    }
 }
 }

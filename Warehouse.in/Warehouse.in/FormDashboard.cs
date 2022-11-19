@@ -44,7 +44,7 @@ namespace Warehouse.@in
 
         private void buttonRequest_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new RequestForm(), sender);
         }
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)
@@ -64,7 +64,7 @@ namespace Warehouse.@in
 
         private void buttonProducts_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new ExportForm(), sender);
         }
     }
 }
