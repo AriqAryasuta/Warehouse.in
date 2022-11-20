@@ -113,5 +113,18 @@ namespace Warehouse.@in
         {
 
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSignup_Click(object sender, EventArgs e)
+        {
+            formLogin login = new formLogin();
+
+            login.Show();
+            this.Hide();
+        }
     }
 }
