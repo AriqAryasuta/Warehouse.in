@@ -134,3 +134,4 @@ C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug
 C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.in.FormStock.resources
 C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.in.RequestForm.resources
 C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.in.ExportForm.resources
+C:\Users\risky\Documents\GitHub\Warehouse.in\Warehouse.in\Warehouse.in\obj\Debug\Warehouse.in.FormSignup.resources

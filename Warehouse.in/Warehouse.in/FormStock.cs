@@ -18,19 +18,13 @@ namespace Warehouse.@in
             InitializeComponent();
         }
         private NpgsqlConnection conn;
-        string connstring = "Host=localhost;Port=5432;Username=postgres;Password=monopoki;Database=WarehouseinDb";
+        string connstring = "Host=localhost;Port=5432;Username=postgres;Password=010800;Database=WarehouseinDb";
         public DataTable dt;
         public static NpgsqlCommand cmd;
         private string sql = null;
         private DataGridViewRow r;
-
-        protected override void OnShown(EventArgs e)
-        {
-            base.OnShown(e);
-            btnRefresh.PerformClick();
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
+        
+        public void RefreshData()
         {
             conn = new NpgsqlConnection(connstring);
             try
@@ -50,7 +44,12 @@ namespace Warehouse.@in
             {
                 MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+        }
+        
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            RefreshData();
         }
 
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
