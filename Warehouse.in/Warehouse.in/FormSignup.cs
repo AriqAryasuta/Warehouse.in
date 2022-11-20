@@ -78,7 +78,7 @@ namespace Warehouse.@in
             {
                 tbPassword.Text = "Enter password";
 
-                tbPassword.ForeColor = Color.Silver;
+                tbPassword.StateCommon.Content.Color1 = Color.Silver;
             }
         }
 

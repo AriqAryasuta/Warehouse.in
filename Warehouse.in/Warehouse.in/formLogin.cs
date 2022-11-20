@@ -36,7 +36,7 @@ namespace Warehouse.@in
             {
                 tbUsername.Text = "";
 
-                tbUsername.ForeColor = Color.Black;
+                tbUsername.StateCommon.Content.Color1 = Color.Black;
             }
         }
 
@@ -46,7 +46,7 @@ namespace Warehouse.@in
             {
                 tbUsername.Text = "Enter username";
 
-                tbUsername.ForeColor = Color.Silver;
+                tbUsername.StateCommon.Content.Color1 = Color.DarkGray;
             }
         }
 
@@ -56,7 +56,7 @@ namespace Warehouse.@in
             {
                 tbPassword.Text = "";
 
-                tbPassword.ForeColor = Color.Black;
+                tbPassword.StateCommon.Content.Color1 = Color.Black;
             }
         }
 
@@ -66,7 +66,7 @@ namespace Warehouse.@in
             {
                 tbPassword.Text = "Enter password";
 
-                tbPassword.ForeColor = Color.Silver;
+                tbPassword.StateCommon.Content.Color1 = Color.DarkGray;
             }
         }
 
