@@ -36,7 +36,7 @@ namespace Warehouse.@in
             dateNow.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
         }
 
-        private void timeNow_Click(object sender, EventArgs e)
+        private void timeNow_Click_1(object sender, EventArgs e)
         {
 
         }

@@ -66,5 +66,20 @@ namespace Warehouse.@in
         {
             OpenChildForm(new ExportForm(), sender);
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelDesktopPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
