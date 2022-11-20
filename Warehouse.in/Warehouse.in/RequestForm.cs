@@ -25,6 +25,12 @@ namespace Warehouse.@in
         private string sql = null;
         private DataGridViewRow r;
 
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            btnRefresh1.PerformClick();
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
