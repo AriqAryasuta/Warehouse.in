@@ -18,17 +18,39 @@ namespace Warehouse.@in
         InitializeComponent();
     }
         private NpgsqlConnection conn2;
-        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=monopoki;Database=WarehouseinDb";
+        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=010800;Database=WarehouseinDb";
 
         public DataTable dt;
         public static NpgsqlCommand cmd;
         private string sql = null;
         private DataGridViewRow r;
 
+        public void RefreshData()
+        {
+            conn2 = new NpgsqlConnection(connstring2);
+            try
+            {
+                conn2.Open();
+                dgvData.DataSource = null;
+                sql = "select * from st_select()";
+                cmd = new NpgsqlCommand(sql, conn2);
+                dt = new DataTable();
+                NpgsqlDataReader rd = cmd.ExecuteReader();
+                dt.Load(rd);
+                dgvData.DataSource = dt;
+
+                conn2.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
-            btnRefresh1.PerformClick();
+            RefreshData();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -66,7 +88,7 @@ namespace Warehouse.@in
                 {
                     MessageBox.Show("Data item berhasil disimpan", "Well Done!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     conn2.Close();
-                    btnRefresh1.PerformClick();
+                    RefreshData();
                     tbName.Text = tbQuantity.Text = cbCategory.Text = null;
                 }
             }
@@ -89,24 +111,7 @@ namespace Warehouse.@in
 
         private void btnRefresh1_Click(object sender, EventArgs e)
         {
-            conn2 = new NpgsqlConnection(connstring2);
-            try
-            {
-                conn2.Open();
-                dgvData.DataSource = null;
-                sql = "select * from st_select()";
-                cmd = new NpgsqlCommand(sql, conn2);
-                dt = new DataTable();
-                NpgsqlDataReader rd = cmd.ExecuteReader();
-                dt.Load(rd);
-                dgvData.DataSource = dt;
-
-                conn2.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
 
         }
     }
