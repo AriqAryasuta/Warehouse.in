@@ -26,3 +26,12 @@ Sebagai solusi untuk meningkatkan kemudahan dalam inventarisasi barang gudang, t
 - Anchanto
 - Increff WMS
 - MITRAHASH
+
+## Use Case
+![Picture1](https://user-images.githubusercontent.com/71449880/191444284-4bbc87d2-a74c-4d3b-ab03-583122c4243f.png)
+
+## Activity Diagram
+![Picture2](https://user-images.githubusercontent.com/71449880/191444859-f8427dab-dec1-4daa-9157-591437d18413.jpg)
+
+## Class Diagram
+![Picture4](https://user-images.githubusercontent.com/71449880/191445012-3c4de02f-e10a-4985-8de0-ce79fa7abe18.png)
