@@ -226,6 +226,9 @@
   <ItemGroup>
     <None Include="Resources\imgLogin.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 11.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
