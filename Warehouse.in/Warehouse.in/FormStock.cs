@@ -23,7 +23,13 @@ namespace Warehouse.@in
         public static NpgsqlCommand cmd;
         private string sql = null;
         private DataGridViewRow r;
-   
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            btnRefresh.PerformClick();
+        }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             conn = new NpgsqlConnection(connstring);
