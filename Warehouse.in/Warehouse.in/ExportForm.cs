@@ -18,19 +18,14 @@ namespace Warehouse.@in
         InitializeComponent();
     }
         private NpgsqlConnection conn3;
-        string connstring3 = "Host=localhost;Port=5432;Username=postgres;Password=monopoki;Database=WarehouseinDb";
+        string connstring3 = "Host=localhost;Port=5432;Username=postgres;Password=010800;Database=WarehouseinDb";
 
         public DataTable dt;
         public static NpgsqlCommand cmd;
         private string sql = null;
         private DataGridViewRow r;
 
-        private void tbQuantity_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRefresh2_Click(object sender, EventArgs e)
+        public void RefreshData()
         {
             conn3 = new NpgsqlConnection(connstring3);
             try
@@ -50,6 +45,10 @@ namespace Warehouse.@in
             {
                 MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void tbQuantity_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void tbName_TextChanged(object sender, EventArgs e)
@@ -83,7 +82,7 @@ namespace Warehouse.@in
                     {
                         MessageBox.Show("Barang berhasil dikirim", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         conn3.Close();
-                        btnRefresh2.PerformClick();
+                        RefreshData();
                         tbName.Text = tbQuantity.Text = tbCategory.Text = null;
                         r = null;
                     }
@@ -104,6 +103,17 @@ namespace Warehouse.@in
                 tbCategory.Text = r.Cells["_category"].Value.ToString();
                 tbQuantity.Text = r.Cells["_quantity"].Value.ToString();
             }
+        }
+
+        private void ExportForm_Shown(object sender, EventArgs e)
+        {
+
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            RefreshData();
         }
     }
 }
