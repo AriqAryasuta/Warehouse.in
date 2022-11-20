@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace Warehouse.@in
 {
     public partial class FormSignup : Form
 {
-    public FormSignup()
-    {
-        InitializeComponent();
-    }
+        public FormSignup()
+        {
+            InitializeComponent();
+        }
+        private NpgsqlConnection conn;
+        string connstring = "Host=localhost;Port=5432;Username=postgres;Password=atA_251201;Database=WarehouseinDb";
+        public static NpgsqlCommand cmd;
+        private string sql = null;
+
 
         private void tbUsername_Enter(object sender, EventArgs e)
         {
@@ -105,6 +113,59 @@ namespace Warehouse.@in
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnSignup_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(tbUsername.Text) || string.IsNullOrEmpty(tbPassword.Text) || string.IsNullOrEmpty(tbEmail.Text) || string.IsNullOrEmpty(tbConfpass.Text))
+            {
+                MessageBox.Show("Mohon isi semua kolom");
+                return;
+            }
+            else
+            {
+                if (tbPassword.Text == tbConfpass.Text)
+                {
+                    var user = new Person
+                    {
+                        Username = tbUsername.Text,
+                        Password = tbPassword.Text,
+                        Email = tbEmail.Text
+                    };
+                    newAcount(user);
+                }
+                else
+                {
+                    MessageBox.Show("Password tidak sesuai dengan Konfirmasi Password");
+                }
+            }
+            
+
+        }
+
+        private void newAcount(Person user)
+        {
+            conn = new NpgsqlConnection(connstring);
+            try
+            {
+                conn.Open();
+                sql = @"select * from user_insert(:_username, :_password, :_email)";
+                cmd = new NpgsqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("_username", user.Username);
+                cmd.Parameters.AddWithValue("_password", user.Password);
+                cmd.Parameters.AddWithValue("_email", user.Email);
+                if((int)cmd.ExecuteScalar() == 1)
+                {
+                    MessageBox.Show("Pendaftaran berhasil");
+                    Homepage home = new Homepage();
+                    this.Hide();
+                    home.Show();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Pendaftaran Gagal");
+            }
         }
     }
 }

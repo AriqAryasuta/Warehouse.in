@@ -10,19 +10,10 @@ namespace Warehouse.@in
     {
         private string _username;
         private string _password;
-        private string _name;
-        private string _phoneNumber;
-        private int _age;
+        private string _email;
 
-        public string Username
-        {
-            get { return _username; }
-            set { _username = value; }
-        }
-        public string Password
-        {
-            get { return _password; }
-            set { _password = value; }
-        }
+        public string Username { get => _username; set => _username = value; }
+        public string Password { get => _password; set => _password = value; }
+        public string Email { get => _email; set => _email = value; }
     }
 }
