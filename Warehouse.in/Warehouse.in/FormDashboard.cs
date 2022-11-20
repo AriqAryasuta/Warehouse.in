@@ -29,7 +29,11 @@ namespace Warehouse.@in
             this.panelDesktopPanel.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-     
+        }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            buttonHome.PerformClick();
         }
 
         private void Form1_Load(object sender, EventArgs e)
