@@ -31,17 +31,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSignup = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbPassword = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.tbUsername = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnLogin = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbPassword = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblSignup = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,6 +86,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(698, 646);
             this.panel1.TabIndex = 4;
+            // 
+            // lblSignup
+            // 
+            this.lblSignup.AutoSize = true;
+            this.lblSignup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignup.ForeColor = System.Drawing.Color.White;
+            this.lblSignup.Location = new System.Drawing.Point(390, 529);
+            this.lblSignup.Name = "lblSignup";
+            this.lblSignup.Size = new System.Drawing.Size(73, 20);
+            this.lblSignup.TabIndex = 14;
+            this.lblSignup.Text = "Sign Up";
+            this.lblSignup.Click += new System.EventHandler(this.lblSignup_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(190, 529);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(194, 20);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Doesn\'t have an account?";
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.Location = new System.Drawing.Point(93, 356);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(454, 38);
+            this.tbPassword.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.tbPassword.StateCommon.Border.Rounding = 10;
+            this.tbPassword.StateCommon.Content.Color1 = System.Drawing.Color.DarkGray;
+            this.tbPassword.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassword.TabIndex = 12;
+            this.tbPassword.Text = "Enter password";
+            this.tbPassword.Enter += new System.EventHandler(this.tbPassword_Enter);
+            this.tbPassword.Leave += new System.EventHandler(this.tbPassword_Leave);
             // 
             // tbUsername
             // 
@@ -211,22 +251,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Sign In";
             // 
-            // tbPassword
-            // 
-            this.tbPassword.Location = new System.Drawing.Point(93, 356);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(454, 38);
-            this.tbPassword.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.tbPassword.StateCommon.Border.Rounding = 10;
-            this.tbPassword.StateCommon.Content.Color1 = System.Drawing.Color.DarkGray;
-            this.tbPassword.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPassword.TabIndex = 12;
-            this.tbPassword.Text = "Enter password";
-            this.tbPassword.Enter += new System.EventHandler(this.tbPassword_Enter);
-            this.tbPassword.Leave += new System.EventHandler(this.tbPassword_Leave);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Warehouse.@in.Properties.Resources.imgLogin;
@@ -248,30 +272,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(190, 529);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(194, 20);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Doesn\'t have an account?";
-            // 
-            // lblSignup
-            // 
-            this.lblSignup.AutoSize = true;
-            this.lblSignup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignup.ForeColor = System.Drawing.Color.White;
-            this.lblSignup.Location = new System.Drawing.Point(390, 529);
-            this.lblSignup.Name = "lblSignup";
-            this.lblSignup.Size = new System.Drawing.Size(73, 20);
-            this.lblSignup.TabIndex = 14;
-            this.lblSignup.Text = "Sign Up";
-            this.lblSignup.Click += new System.EventHandler(this.lblSignup_Click);
             // 
             // formLogin
             // 

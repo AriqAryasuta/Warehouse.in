@@ -69,6 +69,7 @@ namespace Warehouse.@in
                 tbPassword.Text = "";
 
                 tbPassword.StateCommon.Content.Color1 = Color.Black;
+                tbPassword.UseSystemPasswordChar = true;
             }
         }
 
@@ -79,6 +80,8 @@ namespace Warehouse.@in
                 tbPassword.Text = "Enter password";
 
                 tbPassword.StateCommon.Content.Color1 = Color.DarkGray;
+                tbPassword.UseSystemPasswordChar = false;
+
             }
         }
 
@@ -89,6 +92,8 @@ namespace Warehouse.@in
                 tbConfpass.Text = "";
 
                 tbConfpass.StateCommon.Content.Color1 = Color.Black;
+                tbConfpass.UseSystemPasswordChar = true;
+
             }
         }
 
@@ -99,6 +104,8 @@ namespace Warehouse.@in
                 tbConfpass.Text = "Confirm password";
 
                 tbConfpass.StateCommon.Content.Color1 = Color.DarkGray;
+                tbConfpass.UseSystemPasswordChar = false;
+
             }
         }
 
