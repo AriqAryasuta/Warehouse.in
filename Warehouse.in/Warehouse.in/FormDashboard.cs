@@ -83,7 +83,10 @@ namespace Warehouse.@in
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            formLogin login = new formLogin();
 
+            login.Show();
+            this.Hide();
         }
     }
 }
