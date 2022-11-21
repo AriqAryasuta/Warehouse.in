@@ -125,5 +125,10 @@ namespace Warehouse.@in
         {
 
         }
+
+        private void ExportForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

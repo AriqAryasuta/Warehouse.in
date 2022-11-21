@@ -53,11 +53,6 @@ namespace Warehouse.@in
             RefreshData();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void tbName_TextChanged(object sender, EventArgs e)
         {
 
@@ -117,6 +112,11 @@ namespace Warehouse.@in
         private void btnRefresh1_Click(object sender, EventArgs e)
         {
             
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

@@ -51,16 +51,6 @@ namespace Warehouse.@in
             OpenChildForm(new RequestForm(), sender);
         }
 
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonStock_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormStock(), sender);
@@ -69,16 +59,6 @@ namespace Warehouse.@in
         private void buttonProducts_Click(object sender, EventArgs e)
         {
             OpenChildForm(new ExportForm(), sender);
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelDesktopPanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -90,6 +70,11 @@ namespace Warehouse.@in
                 login.Show();
                 this.Hide();
             }            
+        }
+
+        private void panelDesktopPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

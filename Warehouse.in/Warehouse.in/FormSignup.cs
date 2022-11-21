@@ -126,5 +126,10 @@ namespace Warehouse.@in
             login.Show();
             this.Hide();
         }
+
+        private void FormSignup_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
