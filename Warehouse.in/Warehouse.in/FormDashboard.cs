@@ -84,9 +84,12 @@ namespace Warehouse.@in
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             formLogin login = new formLogin();
-
-            login.Show();
-            this.Hide();
+            DialogResult d = MessageBox.Show("Are you sure you want to log out?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (d == DialogResult.Yes)
+            {
+                login.Show();
+                this.Hide();
+            }            
         }
     }
 }

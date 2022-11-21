@@ -18,7 +18,7 @@ namespace Warehouse.@in
         InitializeComponent();
     }
         private NpgsqlConnection conn2;
-        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=010800;Database=WarehouseinDb";
+        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=monopoki;Database=WarehouseinDb";
 
         public DataTable dt;
         public static NpgsqlCommand cmd;
@@ -43,7 +43,7 @@ namespace Warehouse.@in
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Failed Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -76,6 +76,11 @@ namespace Warehouse.@in
         private void btnAdd_Click(object sender, EventArgs e)
         {
             conn2 = new NpgsqlConnection(connstring2);
+            if (tbName.Text.Length == 0 || tbQuantity.Text.Length == 0 || cbCategory.Text.Length == 0)
+            {
+                MessageBox.Show("Please fill all required fields!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             try
             {
                 conn2.Open();
@@ -86,7 +91,7 @@ namespace Warehouse.@in
                 cmd.Parameters.AddWithValue("_category", cbCategory.Text);
                 if ((int)cmd.ExecuteScalar() == 1)
                 {
-                    MessageBox.Show("Data item berhasil disimpan", "Well Done!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Item added successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     conn2.Close();
                     RefreshData();
                     tbName.Text = tbQuantity.Text = cbCategory.Text = null;
@@ -94,7 +99,7 @@ namespace Warehouse.@in
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "INSERT FAIL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Failed Information!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn2.Close();
             }
         }

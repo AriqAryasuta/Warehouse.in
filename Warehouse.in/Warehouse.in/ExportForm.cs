@@ -18,7 +18,7 @@ namespace Warehouse.@in
         InitializeComponent();
     }
         private NpgsqlConnection conn3;
-        string connstring3 = "Host=localhost;Port=5432;Username=postgres;Password=010800;Database=WarehouseinDb";
+        string connstring3 = "Host=localhost;Port=5432;Username=postgres;Password=monopoki;Database=WarehouseinDb";
 
         public DataTable dt;
         public static NpgsqlCommand cmd;
@@ -43,7 +43,7 @@ namespace Warehouse.@in
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Failed Information!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void tbQuantity_TextChanged(object sender, EventArgs e)
@@ -66,10 +66,10 @@ namespace Warehouse.@in
             conn3 = new NpgsqlConnection(connstring3);
             if (r == null)
             {
-                MessageBox.Show("Mohon pilih baris barang yang akan dikirim!", "Info!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select items to be export!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (MessageBox.Show("Apakah anda yakin mengirim barang " + r.Cells["_items"].Value.ToString() + "?", "Konfirmasi Pengiriman",
+            if (MessageBox.Show("Are you sure to export item " + r.Cells["_items"].Value.ToString() + "?", "Export Confirmation",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 try
@@ -80,7 +80,7 @@ namespace Warehouse.@in
                     cmd.Parameters.AddWithValue("_id", r.Cells["_id"].Value.ToString());
                     if ((int)cmd.ExecuteScalar() == 1)
                     {
-                        MessageBox.Show("Barang berhasil dikirim", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Export succeed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         conn3.Close();
                         RefreshData();
                         tbName.Text = tbQuantity.Text = tbCategory.Text = null;
@@ -89,7 +89,7 @@ namespace Warehouse.@in
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message, "Pengiriman Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: " + ex.Message, "Failed Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -114,6 +114,16 @@ namespace Warehouse.@in
         {
             base.OnShown(e);
             RefreshData();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void kryptonLabel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
