@@ -1,7 +1,7 @@
-<h1 align="center"
+<h1 align="center">
   Warehouse.in 📦
- <h1>
-<p A Warehouse Management System in C# | Windows Form | PostgreSQL</p>
+<h1>
+<p align="center">A Warehouse Management System in C# | Windows Form | PostgreSQL</p>
 
 ## 👥 Team 6 Gudang.in
 Ketua : Rizky Junian Nugroho - 20/460564/TK/51153
