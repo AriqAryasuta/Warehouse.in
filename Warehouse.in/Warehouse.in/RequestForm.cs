@@ -16,9 +16,11 @@ namespace Warehouse.@in
     public RequestForm()
     {
         InitializeComponent();
+            dtExpire.Visible = false;
     }
+        
         private NpgsqlConnection conn2;
-        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=monopoki;Database=WarehouseinDb";
+        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=atA_251201;Database=WarehouseinDb";
 
         public DataTable dt;
         public static NpgsqlCommand cmd;
@@ -51,16 +53,17 @@ namespace Warehouse.@in
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            tbExpire.Visible = false;
+        { 
             lbExpire.Visible = false;
             tbCapacity.Visible = false;
             lbCapacity.Visible = false;
             tbMaterial.Visible = false;
             lbMaterial.Visible = false;
+            dtExpire.Visible = false;
+
             if (cbCategory.SelectedItem.ToString() == "food")
             {
-                tbExpire.Visible = true;
+                dtExpire.Visible = true;
                 lbExpire.Visible = true;
             }
             else if (cbCategory.SelectedItem.ToString() == "beverages")
@@ -76,11 +79,6 @@ namespace Warehouse.@in
 
         }
 
-        private void ndQuantity_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             conn2 = new NpgsqlConnection(connstring2);
@@ -91,41 +89,97 @@ namespace Warehouse.@in
             }
             else
             {
-                var items = new Item
+                if(cbCategory.SelectedItem.ToString() == "food")
                 {
-                    Items = tbName.Text.ToLower(),
-                    Quantity = Convert.ToInt32(ndQuantity.Text),
-                    Category = cbCategory.Text
-                };
-                checkItem(items);
+                    if (string.IsNullOrEmpty(dtExpire.Value.ToString()) || string.IsNullOrEmpty(tbName.Text) || ndQuantity.Text == null || string.IsNullOrEmpty(cbCategory.Text))
+                    {
+                        MessageBox.Show("Mohon isi semua kolom");
+                        return;
+                    }
+                    else
+                    {
+                        var items = new food
+                        {
+                            Items = tbName.Text.ToLower(),
+                            Quantity = Convert.ToInt32(ndQuantity.Text),
+                            Category = cbCategory.Text,
+                            ExpiredDate = dtExpire.Value.ToString("dd/MM/yyyy")
+
+                        };
+                        addNewFood(items);
+                    }
+                    
+                }
+                else if(cbCategory.SelectedItem.ToString() == "beverages")
+                {
+                    if(tbCapacity.Text == null || string.IsNullOrEmpty(tbName.Text) || ndQuantity.Text == null || string.IsNullOrEmpty(cbCategory.Text))
+                    {
+                        MessageBox.Show("Mohon isi semua kolom");
+                        return;
+                    }
+                    else
+                    {
+                        var items = new beverage
+                        {
+                            Items = tbName.Text.ToLower(),
+                            Quantity = Convert.ToInt32(ndQuantity.Text),
+                            Category = cbCategory.Text,
+                            Capacity = Convert.ToInt32(tbCapacity.Text),
+                        };
+                        addNewBeverage(items);
+                    }
+                    
+                }
+                else if(cbCategory.SelectedItem.ToString() == "furniture")
+                {
+                    if (tbMaterial.Text == null || string.IsNullOrEmpty(tbName.Text) || ndQuantity.Text == null || string.IsNullOrEmpty(cbCategory.Text))
+                    {
+                        MessageBox.Show("Mohon isi semua kolom");
+                        return;
+                    }
+                    else
+                    {
+                        var items = new furniture
+                        {
+                            Items = tbName.Text,
+                            Quantity = Convert.ToInt32(ndQuantity.Text),
+                            Category = cbCategory.Text,
+                            MadeOf = tbMaterial.Text
+                        };
+                        addNewFurniture(items);
+                    }
+                    
+                }
+                else
+                {
+                    var items = new Item
+                    {
+                        Items = tbName.Text,
+                        Quantity = Convert.ToInt32(ndQuantity.Text),
+                        Category = cbCategory.Text
+                    };
+                    addNewItem(items);
+                }
 
             }
             
         }
-        private void addNewItem(Item user)
+        private void addNewFood(food user)
         {
             conn2 = new NpgsqlConnection(connstring2);
             try
             {
                 conn2.Open();
-                sql = @"select * from st_insert(:_items, :_quantity, :_category)";
+                sql = @"select * from st_insertfood(:_items, :_quantity, :_category, :_date)";
                 cmd = new NpgsqlCommand(sql, conn2);
                 cmd.Parameters.AddWithValue(":_items", user.Items);
                 cmd.Parameters.AddWithValue(":_quantity", user.Quantity);
                 cmd.Parameters.AddWithValue(":_category", user.Category);
-                if((int)cmd.ExecuteScalar() == 1)
+                cmd.Parameters.AddWithValue(":_date", user.ExpiredDate);
+                if ((int)cmd.ExecuteScalar() == 1)
                 {
                     MessageBox.Show("Item" + user.Items +  "telah ditambahkan");
                     conn2.Close();
-                }
-                else
-                {
-                    if((MessageBox.Show("Item " + user.Items + "Telah ada pada gudang", "Anda ingin menambahkan jumlah barang?",
-                        MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes))
-                    {
-                        conn2.Close();
-                        return;
-                    }
                 }
             }
             catch(Exception ex)
@@ -133,84 +187,87 @@ namespace Warehouse.@in
                 MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void checkItem(Item user)
+        private void addNewBeverage(beverage user)
         {
             conn2 = new NpgsqlConnection(connstring2);
             try
             {
                 conn2.Open();
-                sql = "select * from checkItem(:_items, :_category)";
-                cmd.Parameters.AddWithValue("_items", user.Items);
+                sql = @"select * from st_insertbeverage(:_items, :_quantity, :_category, :_capacity)";
+                cmd = new NpgsqlCommand(sql, conn2);
+                cmd.Parameters.AddWithValue(":_items", user.Items);
+                cmd.Parameters.AddWithValue(":_quantity", user.Quantity);
                 cmd.Parameters.AddWithValue(":_category", user.Category);
-                if((int)cmd.ExecuteScalar() == 1)
+                cmd.Parameters.AddWithValue(":_capacity", user.Capacity);
+                if ((int)cmd.ExecuteScalar() == 1)
+                {
+                    MessageBox.Show("Item" + user.Items + "telah ditambahkan");
+                    conn2.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void addNewFurniture(furniture user)
+        {
+            conn2 = new NpgsqlConnection(connstring2);
+            try
+            {
+                conn2.Open();
+                sql = @"select * from st_insertfurniture(:_items, :_quantity, :_category, :_material)";
+                cmd = new NpgsqlCommand(sql, conn2);
+                cmd.Parameters.AddWithValue(":_items", user.Items);
+                cmd.Parameters.AddWithValue(":_quantity", user.Quantity);
+                cmd.Parameters.AddWithValue(":_category", user.Category);
+                cmd.Parameters.AddWithValue(":_material", user.MadeOf);
+                if ((int)cmd.ExecuteScalar() == 1)
+                {
+                    MessageBox.Show("Item" + user.Items + "telah ditambahkan");
+                    conn2.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void addNewItem(Item user)
+        {
+            conn2 = new NpgsqlConnection(connstring2);
+            try
+            {
+                conn2.Open();
+                sql = @"select * from st_insertfood(:_items, :_quantity, :_category)";
+                cmd = new NpgsqlCommand(sql, conn2);
+                cmd.Parameters.AddWithValue(":_items", user.Items);
+                cmd.Parameters.AddWithValue(":_quantity", user.Quantity);
+                cmd.Parameters.AddWithValue(":_category", user.Category);
+                if ((int)cmd.ExecuteScalar() == 1)
+                {
+                    MessageBox.Show("Item" + user.Items + "telah ditambahkan");
+                    conn2.Close();
+                }
+                else
                 {
                     if ((MessageBox.Show("Item " + user.Items + "Telah ada pada gudang", "Anda ingin menambahkan jumlah barang?",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes))
                     {
-                        addNewItem(user);
-                    }
-                    else
-                    {
+                        conn2.Close();
                         return;
                     }
-
-                }
-                else
-                {
-                    addNewItem(user);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error!" + ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
-        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
-        private void tbExpire_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tbCapacity_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbMaterial_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbCapacity_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbMaterial_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnRefresh_Click_1(object sender, EventArgs e)
         {
             RefreshData();
-        }
-
-        private void RequestForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

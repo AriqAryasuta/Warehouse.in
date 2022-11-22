@@ -22,9 +22,9 @@ namespace Warehouse.@in
 
     class food : Item
     {
-        private DateTime expiredDate;
+        private string expiredDate;
 
-        public DateTime ExpiredDate { get => expiredDate; set => expiredDate = value; }
+        public string ExpiredDate { get => expiredDate; set => expiredDate = value; }
     }
     class beverage : Item
     {

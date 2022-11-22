@@ -19,7 +19,7 @@ namespace Warehouse.@in
         }
 
         private NpgsqlConnection conn;
-        string connstring = "Host=localhost;Port=5432;Username=postgres;Password=010800;Database=WarehouseinDb";
+        string connstring = "Host=localhost;Port=5432;Username=postgres;Password=atA_251201;Database=WarehouseinDb";
         public DataTable dt;
         public static NpgsqlCommand cmd;
         private string sql = null;
@@ -80,7 +80,8 @@ namespace Warehouse.@in
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
             string valueToSearch = tbSearch.Text.ToString().ToLower();
-            searchData(valueToSearch);
+            string query = "select * from tb_stock where concat(lower(id),lower(items),lower(category),quantity, lower(capacity), ExpDate, material) like '%" + valueToSearch + "%'";
+            searchData( valueToSearch);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
