@@ -13,7 +13,7 @@ namespace Warehouse.@in
         
     }
 
-    class Item
+    public class Item
     {
         private string id;
         private string items;

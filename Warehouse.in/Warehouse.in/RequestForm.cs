@@ -18,7 +18,7 @@ namespace Warehouse.@in
         InitializeComponent();
     }
         private NpgsqlConnection conn2;
-        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=010800;Database=WarehouseinDb";
+        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=atA_251201;Database=WarehouseinDb";
 
         public DataTable dt;
         public static NpgsqlCommand cmd;
@@ -38,8 +38,6 @@ namespace Warehouse.@in
                 NpgsqlDataReader rd = cmd.ExecuteReader();
                 dt.Load(rd);
                 dgvData.DataSource = dt;
-
-                conn2.Close();
             }
             catch (Exception ex)
             {
@@ -76,27 +74,87 @@ namespace Warehouse.@in
         private void btnAdd_Click(object sender, EventArgs e)
         {
             conn2 = new NpgsqlConnection(connstring2);
+            if (string.IsNullOrEmpty(tbName.Text) || ndQuantity.Value == null || string.IsNullOrEmpty(cbCategory.Text))
+            {
+                MessageBox.Show("Mohon isi semua kolom");
+                return;
+            }
+            else
+            {
+                var items = new Item
+                {
+                    Items = tbName.Text.ToLower(),
+                    Quantity = Convert.ToInt32(ndQuantity.Value),
+                    Category = cbCategory.Text
+                };
+                checkItem(items);
+
+            }
+            
+        }
+        private void addNewItem(Item user)
+        {
+            conn2 = new NpgsqlConnection(connstring2);
             try
             {
                 conn2.Open();
                 sql = @"select * from st_insert(:_items, :_quantity, :_category)";
                 cmd = new NpgsqlCommand(sql, conn2);
-                cmd.Parameters.AddWithValue("_items", tbName.Text);
-                cmd.Parameters.AddWithValue("_quantity", int.Parse(tbQuantity.Text));
-                cmd.Parameters.AddWithValue("_category", cbCategory.Text);
-                if ((int)cmd.ExecuteScalar() == 1)
+                cmd.Parameters.AddWithValue(":_items", user.Items);
+                cmd.Parameters.AddWithValue(":_quantity", user.Quantity);
+                cmd.Parameters.AddWithValue(":_category", user.Category);
+                if((int)cmd.ExecuteScalar() == 1)
                 {
-                    MessageBox.Show("Data item berhasil disimpan", "Well Done!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Item" + user.Items +  "telah ditambahkan");
                     conn2.Close();
-                    RefreshData();
-                    tbName.Text = tbQuantity.Text = cbCategory.Text = null;
+                }
+                else
+                {
+                    if((MessageBox.Show("Item " + user.Items + "Telah ada pada gudang", "Anda ingin menambahkan jumlah barang?",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes))
+                    {
+                        conn2.Close();
+                        return;
+                    }
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "INSERT FAIL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                conn2.Close();
+                MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void checkItem(Item user)
+        {
+            conn2 = new NpgsqlConnection(connstring2);
+            try
+            {
+                conn2.Open();
+                sql = "select * from checkItem(:_items, :_category)";
+                cmd.Parameters.AddWithValue("_items", user.Items);
+                cmd.Parameters.AddWithValue(":_category", user.Category);
+                if((int)cmd.ExecuteScalar() == 1)
+                {
+                    if ((MessageBox.Show("Item " + user.Items + "Telah ada pada gudang", "Anda ingin menambahkan jumlah barang?",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes))
+                    {
+                        addNewItem(user);
+                    }
+                    else
+                    {
+                        return;
+                    }
+
+                }
+                else
+                {
+                    addNewItem(user);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error!" + ex.Message);
+            }
+
         }
 
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)

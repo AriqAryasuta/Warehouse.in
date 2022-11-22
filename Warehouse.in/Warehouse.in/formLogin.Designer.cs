@@ -90,7 +90,6 @@
             this.label7.Size = new System.Drawing.Size(238, 25);
             this.label7.TabIndex = 13;
             this.label7.Text = "Doesn\'t have an account?";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // tbPassword
             // 
@@ -240,7 +239,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 

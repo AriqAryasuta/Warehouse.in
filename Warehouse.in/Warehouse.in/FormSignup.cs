@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,11 +13,15 @@ using System.Windows.Forms;
 namespace Warehouse.@in
 {
     public partial class FormSignup : Form
-{
-    public FormSignup()
     {
-        InitializeComponent();
-    }
+        public FormSignup()
+        {
+            InitializeComponent();
+        }
+        private NpgsqlConnection conn;
+        string connstring = "Host=localhost;Port=5432;Username=postgres;Password=atA_251201;Database=WarehouseinDb";
+        public static NpgsqlCommand cmd;
+        private string sql = null;
 
         private void tbUsername_Enter(object sender, EventArgs e)
         {
@@ -109,22 +115,92 @@ namespace Warehouse.@in
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lblSignup_Click(object sender, EventArgs e)
         {
             formLogin login = new formLogin();
 
             login.Show();
             this.Hide();
+        }
+
+        private void btnSignup_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbUsername.Text) || string.IsNullOrEmpty(tbPassword.Text) || string.IsNullOrEmpty(tbEmail.Text) || string.IsNullOrEmpty(tbConfpass.Text))
+            {
+                MessageBox.Show("Mohon isi semua kolom");
+                return;
+            }
+            else
+            {
+                if (tbPassword.Text == tbConfpass.Text)
+                {
+                    var user = new Person
+                    {
+                        Username = tbUsername.Text.ToLower(),
+                        Password = tbPassword.Text,
+                        Email = tbEmail.Text
+                    };
+                    accountCheck(user);
+                }
+                else
+                {
+                    MessageBox.Show("Password tidak sesuai dengan Konfirmasi Password");
+                }
+            }
+        }
+
+        private void newAccount(Person user)
+        {
+            conn = new NpgsqlConnection(connstring);
+            try
+            {
+                conn.Open();
+                sql = @"select * from user_insert(:_username, :_password, :_email)";
+                cmd = new NpgsqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("_username", user.Username);
+                cmd.Parameters.AddWithValue("_password", user.Password);
+                cmd.Parameters.AddWithValue("_email", user.Email);
+                if ((int)cmd.ExecuteScalar() == 1)
+                {
+                    MessageBox.Show("Pendaftaran berhasil");
+                    Homepage home = new Homepage();
+                    conn.Close();
+                    this.Hide();
+                    home.Show();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void accountCheck(Person user)
+        {
+            conn = new NpgsqlConnection(connstring);
+            try
+            {
+                conn.Open();
+                sql = "select * from account_check(:_username)";
+                cmd = new NpgsqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("_username", user.Username);
+                int check = (int)cmd.ExecuteScalar();
+                if(check == 1)
+                {
+                    MessageBox.Show("Username telah digunakan");
+                    return;
+                }
+                else
+                {
+                    newAccount(user);
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }
