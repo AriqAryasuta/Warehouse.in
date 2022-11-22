@@ -113,7 +113,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.tbUsername.StateCommon.Border.Rounding = 10;
-            this.tbUsername.StateCommon.Content.Color1 = System.Drawing.Color.DarkGray;
+            this.tbUsername.StateCommon.Content.Color1 = System.Drawing.Color.Black;
             this.tbUsername.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsername.TabIndex = 17;
             this.tbUsername.Enter += new System.EventHandler(this.tbUsername_Enter);
@@ -124,14 +124,16 @@
             // 
             this.tbConfpass.Location = new System.Drawing.Point(93, 454);
             this.tbConfpass.Name = "tbConfpass";
+            this.tbConfpass.PasswordChar = '●';
             this.tbConfpass.Size = new System.Drawing.Size(454, 37);
             this.tbConfpass.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.tbConfpass.StateCommon.Border.Rounding = 10;
-            this.tbConfpass.StateCommon.Content.Color1 = System.Drawing.Color.DarkGray;
+            this.tbConfpass.StateCommon.Content.Color1 = System.Drawing.Color.Black;
             this.tbConfpass.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbConfpass.TabIndex = 16;
+            this.tbConfpass.UseSystemPasswordChar = true;
             this.tbConfpass.Enter += new System.EventHandler(this.tbConfpass_Enter);
             this.tbConfpass.Leave += new System.EventHandler(this.tbConfpass_Leave);
             // 
@@ -169,7 +171,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.tbPassword.StateCommon.Border.Rounding = 10;
-            this.tbPassword.StateCommon.Content.Color1 = System.Drawing.Color.DarkGray;
+            this.tbPassword.StateCommon.Content.Color1 = System.Drawing.Color.Black;
             this.tbPassword.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPassword.TabIndex = 12;
             this.tbPassword.UseSystemPasswordChar = true;
@@ -185,7 +187,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.tbEmail.StateCommon.Border.Rounding = 10;
-            this.tbEmail.StateCommon.Content.Color1 = System.Drawing.Color.DarkGray;
+            this.tbEmail.StateCommon.Content.Color1 = System.Drawing.Color.Black;
             this.tbEmail.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmail.TabIndex = 11;
             this.tbEmail.Enter += new System.EventHandler(this.tbEmail_Enter);
