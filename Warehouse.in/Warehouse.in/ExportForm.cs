@@ -18,7 +18,7 @@ namespace Warehouse.@in
         InitializeComponent();
     }
         private NpgsqlConnection conn3;
-        string connstring3 = "Host=localhost;Port=5432;Username=postgres;Password=atA_251201;Database=WarehouseinDb";
+        string connstring3 = "Host=localhost;Port=5432;Username=postgres;Password=monopoki;Database=WarehouseinDb";
 
         public DataTable dt;
         public static NpgsqlCommand cmd;
@@ -126,6 +126,16 @@ namespace Warehouse.@in
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExportForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFilter_Click_1(object sender, EventArgs e)
         {
 
         }
