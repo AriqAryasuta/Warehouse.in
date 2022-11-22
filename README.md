@@ -1,6 +1,6 @@
 <h1 align="center">
   Warehouse.in 📦
-<h1>
+</h1>
 <p align="center">A Warehouse Management System in C# | Windows Form | PostgreSQL</p>
 
 ## 👥 Team 6 Gudang.in
