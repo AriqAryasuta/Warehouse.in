@@ -57,11 +57,6 @@ namespace Warehouse.@in
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void FormStock_Load(object sender, EventArgs e)
         {
 

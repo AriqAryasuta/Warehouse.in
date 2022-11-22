@@ -30,6 +30,8 @@
     {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnFilter = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.cbCategory = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
@@ -67,16 +69,17 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1404, 790);
+            this.panel1.Size = new System.Drawing.Size(1162, 853);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnFilter
             // 
             this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilter.Location = new System.Drawing.Point(1227, 140);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFilter.Location = new System.Drawing.Point(955, 142);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(4);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(62)))), ((int)(((byte)(75)))));
             this.btnFilter.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(62)))), ((int)(((byte)(75)))));
@@ -84,7 +87,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnFilter.OverrideDefault.Border.Rounding = 10;
-            this.btnFilter.Size = new System.Drawing.Size(144, 33);
+            this.btnFilter.Size = new System.Drawing.Size(172, 33);
             this.btnFilter.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(62)))), ((int)(((byte)(75)))));
             this.btnFilter.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(62)))), ((int)(((byte)(75)))));
             this.btnFilter.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -104,7 +107,6 @@
             this.btnFilter.StateTracking.Border.Rounding = 10;
             this.btnFilter.TabIndex = 17;
             this.btnFilter.Values.Text = "FILTER";
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // cbCategory
             // 
@@ -113,21 +115,20 @@
             "food",
             "beverages",
             "furniture"});
-            this.cbCategory.Location = new System.Drawing.Point(717, 140);
-            this.cbCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCategory.Location = new System.Drawing.Point(570, 142);
+            this.cbCategory.Margin = new System.Windows.Forms.Padding(4);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(481, 31);
+            this.cbCategory.Size = new System.Drawing.Size(377, 31);
             this.cbCategory.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.cbCategory.StateCommon.ComboBox.Border.Rounding = 10;
             this.cbCategory.TabIndex = 16;
-            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // kryptonPanel1
             // 
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 98);
-            this.kryptonPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kryptonPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.Size = new System.Drawing.Size(1519, 12);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(160)))), ((int)(((byte)(164)))));
@@ -135,11 +136,11 @@
             // 
             // tbCategory
             // 
-            this.tbCategory.Location = new System.Drawing.Point(219, 267);
-            this.tbCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCategory.Location = new System.Drawing.Point(206, 271);
+            this.tbCategory.Margin = new System.Windows.Forms.Padding(4);
             this.tbCategory.Name = "tbCategory";
             this.tbCategory.ReadOnly = true;
-            this.tbCategory.Size = new System.Drawing.Size(403, 33);
+            this.tbCategory.Size = new System.Drawing.Size(332, 33);
             this.tbCategory.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -149,10 +150,10 @@
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(219, 196);
-            this.tbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbName.Location = new System.Drawing.Point(206, 199);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(403, 33);
+            this.tbName.Size = new System.Drawing.Size(332, 33);
             this.tbName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -164,7 +165,7 @@
             // 
             this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExport.Location = new System.Drawing.Point(43, 433);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(4);
             this.btnExport.Name = "btnExport";
             this.btnExport.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(62)))), ((int)(((byte)(75)))));
             this.btnExport.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(62)))), ((int)(((byte)(75)))));
@@ -172,7 +173,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnExport.OverrideDefault.Border.Rounding = 10;
-            this.btnExport.Size = new System.Drawing.Size(579, 46);
+            this.btnExport.Size = new System.Drawing.Size(495, 46);
             this.btnExport.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(62)))), ((int)(((byte)(75)))));
             this.btnExport.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(62)))), ((int)(((byte)(75)))));
             this.btnExport.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -196,10 +197,10 @@
             // 
             // tbQuantity
             // 
-            this.tbQuantity.Location = new System.Drawing.Point(219, 340);
-            this.tbQuantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbQuantity.Location = new System.Drawing.Point(206, 343);
+            this.tbQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.tbQuantity.Name = "tbQuantity";
-            this.tbQuantity.Size = new System.Drawing.Size(403, 33);
+            this.tbQuantity.Size = new System.Drawing.Size(332, 33);
             this.tbQuantity.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -211,7 +212,7 @@
             // 
             this.kryptonLabel3.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
             this.kryptonLabel3.Location = new System.Drawing.Point(16, 34);
-            this.kryptonLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kryptonLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonLabel3.Name = "kryptonLabel3";
             this.kryptonLabel3.Size = new System.Drawing.Size(206, 57);
             this.kryptonLabel3.StateCommon.LongText.Color1 = System.Drawing.Color.Transparent;
@@ -219,12 +220,13 @@
             this.kryptonLabel3.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonLabel3.TabIndex = 5;
             this.kryptonLabel3.Values.Text = "EXPORT";
+            this.kryptonLabel3.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonLabel3_Paint);
             // 
             // kryptonLabel2
             // 
             this.kryptonLabel2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
             this.kryptonLabel2.Location = new System.Drawing.Point(43, 343);
-            this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.Size = new System.Drawing.Size(145, 32);
             this.kryptonLabel2.StateCommon.LongText.Color1 = System.Drawing.Color.Transparent;
@@ -237,20 +239,20 @@
             // 
             this.kryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
             this.kryptonLabel1.Location = new System.Drawing.Point(43, 271);
-            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(140, 32);
+            this.kryptonLabel1.Size = new System.Drawing.Size(146, 32);
             this.kryptonLabel1.StateCommon.LongText.Color1 = System.Drawing.Color.Transparent;
             this.kryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
             this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonLabel1.TabIndex = 3;
-            this.kryptonLabel1.Values.Text = "Category   :";
+            this.kryptonLabel1.Values.Text = "Category    :";
             // 
             // lblName
             // 
             this.lblName.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldControl;
             this.lblName.Location = new System.Drawing.Point(43, 199);
-            this.lblName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(145, 32);
             this.lblName.StateCommon.LongText.Color1 = System.Drawing.Color.Transparent;
@@ -267,30 +269,30 @@
             this.dgvData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(28)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(28)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(28)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(28)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvData.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(28)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvData.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvData.EnableHeadersVisualStyles = false;
-            this.dgvData.Location = new System.Drawing.Point(717, 182);
-            this.dgvData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvData.Location = new System.Drawing.Point(570, 196);
+            this.dgvData.Margin = new System.Windows.Forms.Padding(4);
             this.dgvData.Name = "dgvData";
             this.dgvData.RowHeadersVisible = false;
             this.dgvData.RowHeadersWidth = 51;
-            this.dgvData.Size = new System.Drawing.Size(653, 593);
+            this.dgvData.Size = new System.Drawing.Size(557, 583);
             this.dgvData.TabIndex = 0;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             // 
@@ -298,11 +300,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1404, 790);
+            this.ClientSize = new System.Drawing.Size(1162, 853);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ExportForm";
             this.Text = "ExportForm";
+            this.Load += new System.EventHandler(this.ExportForm_Load);
             this.Shown += new System.EventHandler(this.ExportForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -202,5 +202,10 @@ namespace Warehouse.@in
 
             }
         }
+
+        private void FormSignup_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

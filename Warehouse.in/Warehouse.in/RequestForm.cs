@@ -41,7 +41,7 @@ namespace Warehouse.@in
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Failed Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -49,11 +49,6 @@ namespace Warehouse.@in
         {
             base.OnShown(e);
             RefreshData();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void tbName_TextChanged(object sender, EventArgs e)
@@ -170,6 +165,11 @@ namespace Warehouse.@in
         private void btnRefresh1_Click(object sender, EventArgs e)
         {
             
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

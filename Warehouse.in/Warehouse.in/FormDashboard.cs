@@ -51,16 +51,6 @@ namespace Warehouse.@in
             OpenChildForm(new RequestForm(), sender);
         }
 
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonStock_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormStock(), sender);
@@ -71,22 +61,20 @@ namespace Warehouse.@in
             OpenChildForm(new ExportForm(), sender);
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            formLogin login = new formLogin();
+            DialogResult d = MessageBox.Show("Are you sure you want to log out?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (d == DialogResult.Yes)
+            {
+                login.Show();
+                this.Hide();
+            }            
         }
 
         private void panelDesktopPanel_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            formLogin login = new formLogin();
-
-            login.Show();
-            this.Hide();
         }
     }
 }

@@ -57,11 +57,10 @@
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(195, 681);
+            this.panelMenu.Size = new System.Drawing.Size(260, 853);
             this.panelMenu.TabIndex = 0;
-            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // btnLogOut
             // 
@@ -69,8 +68,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogOut.Location = new System.Drawing.Point(33, 624);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogOut.Location = new System.Drawing.Point(44, 768);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -78,7 +77,7 @@
             this.btnLogOut.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnLogOut.Size = new System.Drawing.Size(119, 38);
+            this.btnLogOut.Size = new System.Drawing.Size(159, 62);
             this.btnLogOut.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(74)))), ((int)(((byte)(73)))));
             this.btnLogOut.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(74)))), ((int)(((byte)(73)))));
             this.btnLogOut.StateCommon.Border.Color1 = System.Drawing.Color.White;
@@ -91,23 +90,23 @@
             this.btnLogOut.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnLogOut.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnLogOut.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
-            this.btnLogOut.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
+            this.btnLogOut.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnLogOut.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLogOut.StateDisabled.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnLogOut.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnLogOut.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(160)))), ((int)(((byte)(164)))));
-            this.btnLogOut.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(160)))), ((int)(((byte)(164)))));
-            this.btnLogOut.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
-            this.btnLogOut.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
+            this.btnLogOut.StatePressed.Back.Color1 = System.Drawing.Color.Maroon;
+            this.btnLogOut.StatePressed.Back.Color2 = System.Drawing.Color.Maroon;
+            this.btnLogOut.StatePressed.Border.Color1 = System.Drawing.Color.White;
+            this.btnLogOut.StatePressed.Border.Color2 = System.Drawing.Color.White;
             this.btnLogOut.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnLogOut.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLogOut.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnLogOut.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnLogOut.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnLogOut.StateTracking.Back.Color1 = System.Drawing.Color.Maroon;
             this.btnLogOut.StateTracking.Back.Color2 = System.Drawing.Color.Maroon;
             this.btnLogOut.StateTracking.Border.Color1 = System.Drawing.Color.Maroon;
@@ -123,9 +122,10 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 396);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 487);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(195, 223);
+            this.pictureBox1.Size = new System.Drawing.Size(260, 274);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -138,11 +138,11 @@
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.Image = global::Warehouse.@in.Properties.Resources.icons8_open_box_32;
             this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExport.Location = new System.Drawing.Point(0, 339);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExport.Location = new System.Drawing.Point(0, 417);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnExport.Size = new System.Drawing.Size(195, 57);
+            this.btnExport.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnExport.Size = new System.Drawing.Size(260, 70);
             this.btnExport.TabIndex = 5;
             this.btnExport.Text = "Export";
             this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -158,11 +158,11 @@
             this.buttonRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRequest.Image = global::Warehouse.@in.Properties.Resources.icons8_unpacking_32;
             this.buttonRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRequest.Location = new System.Drawing.Point(0, 282);
-            this.buttonRequest.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRequest.Location = new System.Drawing.Point(0, 347);
+            this.buttonRequest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRequest.Name = "buttonRequest";
-            this.buttonRequest.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonRequest.Size = new System.Drawing.Size(195, 57);
+            this.buttonRequest.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.buttonRequest.Size = new System.Drawing.Size(260, 70);
             this.buttonRequest.TabIndex = 4;
             this.buttonRequest.Text = "Request";
             this.buttonRequest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -178,11 +178,11 @@
             this.buttonStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStock.Image = global::Warehouse.@in.Properties.Resources.icons8_shipping_product_32;
             this.buttonStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonStock.Location = new System.Drawing.Point(0, 225);
-            this.buttonStock.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonStock.Location = new System.Drawing.Point(0, 277);
+            this.buttonStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonStock.Name = "buttonStock";
-            this.buttonStock.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonStock.Size = new System.Drawing.Size(195, 57);
+            this.buttonStock.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.buttonStock.Size = new System.Drawing.Size(260, 70);
             this.buttonStock.TabIndex = 3;
             this.buttonStock.Text = "Stock";
             this.buttonStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -198,11 +198,11 @@
             this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHome.Image = global::Warehouse.@in.Properties.Resources.icons8_home_page_32;
             this.buttonHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonHome.Location = new System.Drawing.Point(0, 168);
-            this.buttonHome.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonHome.Location = new System.Drawing.Point(0, 207);
+            this.buttonHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonHome.Size = new System.Drawing.Size(195, 57);
+            this.buttonHome.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.buttonHome.Size = new System.Drawing.Size(260, 70);
             this.buttonHome.TabIndex = 0;
             this.buttonHome.Text = "Home";
             this.buttonHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,9 +215,9 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(195, 168);
+            this.panel1.Size = new System.Drawing.Size(260, 207);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox2
@@ -225,9 +225,9 @@
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(195, 168);
+            this.pictureBox2.Size = new System.Drawing.Size(260, 207);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -235,22 +235,24 @@
             // panelDesktopPanel
             // 
             this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPanel.Location = new System.Drawing.Point(195, 0);
+            this.panelDesktopPanel.Location = new System.Drawing.Point(260, 0);
+            this.panelDesktopPanel.Margin = new System.Windows.Forms.Padding(4);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(1069, 681);
+            this.panelDesktopPanel.Size = new System.Drawing.Size(1162, 853);
             this.panelDesktopPanel.TabIndex = 1;
             this.panelDesktopPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktopPanel_Paint);
             // 
             // Homepage
             // 
             this.AccessibleDescription = "";
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(187)))));
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1422, 853);
             this.Controls.Add(this.panelDesktopPanel);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Homepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Warehouse.in";
