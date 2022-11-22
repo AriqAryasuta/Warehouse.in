@@ -18,7 +18,7 @@ namespace Warehouse.@in
         InitializeComponent();
     }
         private NpgsqlConnection conn2;
-        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=atA_251201;Database=WarehouseinDb";
+        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=monopoki;Database=WarehouseinDb";
 
         public DataTable dt;
         public static NpgsqlCommand cmd;
@@ -58,10 +58,31 @@ namespace Warehouse.@in
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+            tbExpire.Visible = false;
+            lbExpire.Visible = false;
+            tbCapacity.Visible = false;
+            lbCapacity.Visible = false;
+            tbMaterial.Visible = false;
+            lbMaterial.Visible = false;
+            if (cbCategory.SelectedItem.ToString() == "food")
+            {
+                tbExpire.Visible = true;
+                lbExpire.Visible = true;
+            }
+            else if (cbCategory.SelectedItem.ToString() == "beverages")
+            {
+                tbCapacity.Visible = true;
+                lbCapacity.Visible = true;
+            }
+            else
+            {
+                tbMaterial.Visible = true;
+                lbMaterial.Visible = true;
+            }
 
         }
 
-        private void tbQuantity_TextChanged(object sender, EventArgs e)
+        private void ndQuantity_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -69,7 +90,7 @@ namespace Warehouse.@in
         private void btnAdd_Click(object sender, EventArgs e)
         {
             conn2 = new NpgsqlConnection(connstring2);
-            if (string.IsNullOrEmpty(tbName.Text) || ndQuantity.Value == null || string.IsNullOrEmpty(cbCategory.Text))
+            if (string.IsNullOrEmpty(tbName.Text) || ndQuantity.Text == null || string.IsNullOrEmpty(cbCategory.Text))
             {
                 MessageBox.Show("Mohon isi semua kolom");
                 return;
@@ -79,7 +100,7 @@ namespace Warehouse.@in
                 var items = new Item
                 {
                     Items = tbName.Text.ToLower(),
-                    Quantity = Convert.ToInt32(ndQuantity.Value),
+                    Quantity = Convert.ToInt32(ndQuantity.Text),
                     Category = cbCategory.Text
                 };
                 checkItem(items);
@@ -169,6 +190,36 @@ namespace Warehouse.@in
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void kryptonLabel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tbExpire_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tbCapacity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbMaterial_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCapacity_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbMaterial_Paint(object sender, PaintEventArgs e)
         {
 
         }
