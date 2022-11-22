@@ -17,7 +17,7 @@ namespace Warehouse.@in
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RequestForm());
+            Application.Run(new formLogin());
         }
     }
 }
