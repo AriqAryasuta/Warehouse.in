@@ -335,6 +335,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.BackColor = System.Drawing.Color.White;
+            this.lblUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.DimGray;
             this.lblUsername.Location = new System.Drawing.Point(101, 167);
@@ -348,6 +349,7 @@
             // 
             this.lblPass.AutoSize = true;
             this.lblPass.BackColor = System.Drawing.Color.White;
+            this.lblPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPass.ForeColor = System.Drawing.Color.DimGray;
             this.lblPass.Location = new System.Drawing.Point(101, 362);
@@ -361,6 +363,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.White;
+            this.lblEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.DimGray;
             this.lblEmail.Location = new System.Drawing.Point(101, 265);
@@ -374,6 +377,7 @@
             // 
             this.lblConfpass.AutoSize = true;
             this.lblConfpass.BackColor = System.Drawing.Color.White;
+            this.lblConfpass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblConfpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfpass.ForeColor = System.Drawing.Color.DimGray;
             this.lblConfpass.Location = new System.Drawing.Point(101, 460);

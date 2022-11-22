@@ -282,6 +282,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.BackColor = System.Drawing.Color.White;
+            this.lblUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.DimGray;
             this.lblUsername.Location = new System.Drawing.Point(110, 305);
@@ -295,6 +296,7 @@
             // 
             this.lblPass.AutoSize = true;
             this.lblPass.BackColor = System.Drawing.Color.White;
+            this.lblPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPass.ForeColor = System.Drawing.Color.DimGray;
             this.lblPass.Location = new System.Drawing.Point(110, 392);
