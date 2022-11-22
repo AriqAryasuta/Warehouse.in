@@ -79,7 +79,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1162, 853);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // kryptonPanel1
             // 
@@ -254,7 +253,6 @@
             this.dgvData.RowHeadersWidth = 51;
             this.dgvData.Size = new System.Drawing.Size(557, 583);
             this.dgvData.TabIndex = 0;
-            this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             // 
             // tbExpire
             // 
@@ -268,7 +266,6 @@
             this.tbExpire.StateCommon.Border.Rounding = 10;
             this.tbExpire.TabIndex = 13;
             this.tbExpire.Visible = false;
-            this.tbExpire.TextChanged += new System.EventHandler(this.tbExpire_TextChanged);
             // 
             // lbExpire
             // 
@@ -283,7 +280,6 @@
             this.lbExpire.TabIndex = 12;
             this.lbExpire.Values.Text = "Expire Date :";
             this.lbExpire.Visible = false;
-            this.lbExpire.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonLabel4_Paint);
             // 
             // tbCapacity
             // 
@@ -297,7 +293,6 @@
             this.tbCapacity.StateCommon.Border.Rounding = 10;
             this.tbCapacity.TabIndex = 15;
             this.tbCapacity.Visible = false;
-            this.tbCapacity.TextChanged += new System.EventHandler(this.tbCapacity_TextChanged);
             // 
             // lbCapacity
             // 
@@ -312,7 +307,6 @@
             this.lbCapacity.TabIndex = 14;
             this.lbCapacity.Values.Text = "Capacity     :";
             this.lbCapacity.Visible = false;
-            this.lbCapacity.Paint += new System.Windows.Forms.PaintEventHandler(this.lbCapacity_Paint);
             // 
             // lbMaterial
             // 
@@ -327,7 +321,6 @@
             this.lbMaterial.TabIndex = 16;
             this.lbMaterial.Values.Text = "Material      :";
             this.lbMaterial.Visible = false;
-            this.lbMaterial.Paint += new System.Windows.Forms.PaintEventHandler(this.lbMaterial_Paint);
             // 
             // tbMaterial
             // 
@@ -341,7 +334,6 @@
             this.tbMaterial.StateCommon.Border.Rounding = 10;
             this.tbMaterial.TabIndex = 17;
             this.tbMaterial.Visible = false;
-            this.tbMaterial.TextChanged += new System.EventHandler(this.tbMaterial_TextChanged);
             // 
             // RequestForm
             // 
@@ -353,7 +345,6 @@
             this.Name = "RequestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RequestForm";
-            this.Load += new System.EventHandler(this.RequestForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();

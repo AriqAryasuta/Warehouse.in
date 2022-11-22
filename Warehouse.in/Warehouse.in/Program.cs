@@ -17,7 +17,11 @@ namespace Warehouse.@in
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new formLogin());
+=======
+            Application.Run(new FormSignup());
+>>>>>>> 788d37970c2d8bd2f8aa7b9e667db3de7f0ee6a9
         }
     }
 }
