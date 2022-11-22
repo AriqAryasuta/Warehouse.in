@@ -84,44 +84,27 @@ namespace Warehouse.@in
 
         private void tbUsername_Enter(object sender, EventArgs e)
         {
-            if(tbUsername.Text == "Enter username")
-            {
-                tbUsername.Text = "";
-
-                tbUsername.StateCommon.Content.Color1 = Color.Black;
-            }
+            lblUsername.Visible = false;
         }
 
         private void tbUsername_Leave(object sender, EventArgs e)
         {
             if (tbUsername.Text == "")
             {
-                tbUsername.Text = "Enter username";
-
-                tbUsername.StateCommon.Content.Color1 = Color.DarkGray;
+                lblUsername.Visible = true;
             }
         }
 
         private void tbPassword_Enter(object sender, EventArgs e)
         {
-            if (tbPassword.Text == "Enter password")
-            {
-                tbPassword.Text = "";
-
-                tbPassword.StateCommon.Content.Color1 = Color.Black;
-                tbPassword.UseSystemPasswordChar = true;
-            }
+            lblPass.Visible = false;
         }
 
         private void tbPassword_Leave(object sender, EventArgs e)
         {
             if (tbPassword.Text == "")
             {
-                tbPassword.Text = "Enter password";
-
-                tbPassword.StateCommon.Content.Color1 = Color.DarkGray;
-                tbPassword.UseSystemPasswordChar = false;
-
+                lblPass.Visible = true;
             }
         }
 
@@ -131,6 +114,18 @@ namespace Warehouse.@in
 
             signup.Show();
             this.Hide();
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+            tbUsername.Select();
+            lblUsername.Visible = false;
+        }
+
+        private void lblPass_Click(object sender, EventArgs e)
+        {
+            tbPassword.Select();
+            lblPass.Visible = false;
         }
     }
 }
