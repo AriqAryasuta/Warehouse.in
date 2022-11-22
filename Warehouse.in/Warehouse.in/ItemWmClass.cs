@@ -7,12 +7,6 @@ using System.Threading.Tasks;
 
 namespace Warehouse.@in
 {
-    class WarehouseManager
-    {
-
-        
-    }
-
     public class Item
     {
         private string id;
