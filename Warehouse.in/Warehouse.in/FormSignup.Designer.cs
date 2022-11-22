@@ -99,10 +99,6 @@
             this.label9.Size = new System.Drawing.Size(239, 25);
             this.label9.TabIndex = 20;
             this.label9.Text = "Already have an account?";
-<<<<<<< HEAD
-            //this.label9.Click += new System.EventHandler(this.label9_Click);
-=======
->>>>>>> 788d37970c2d8bd2f8aa7b9e667db3de7f0ee6a9
             // 
             // tbUsername
             // 
