@@ -18,7 +18,7 @@ namespace Warehouse.@in
         InitializeComponent();
     }
         private NpgsqlConnection conn2;
-        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=atA_251201;Database=WarehouseinDb";
+        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=010800;Database=WarehouseinDb";
 
         public DataTable dt;
         public static NpgsqlCommand cmd;

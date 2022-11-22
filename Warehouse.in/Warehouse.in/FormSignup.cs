@@ -25,22 +25,12 @@ namespace Warehouse.@in
 
         private void tbUsername_Enter(object sender, EventArgs e)
         {
-            if (tbUsername.Text == "Enter username")
-            {
-                tbUsername.Text = "";
-
-                tbUsername.StateCommon.Content.Color1 = Color.Black;
-            }
+            lblUsername.Visible = false;
         }
 
         private void tbEmail_Enter(object sender, EventArgs e)
         {
-            if (tbEmail.Text == "Enter email")
-            {
-                tbEmail.Text = "";
-
-                tbEmail.StateCommon.Content.Color1 = Color.Black;
-            }
+            lblEmail.Visible = false;
         }
 
         private void tbUsername_Validated(object sender, EventArgs e)
@@ -52,9 +42,7 @@ namespace Warehouse.@in
         {
             if (tbUsername.Text == "")
             {
-                tbUsername.Text = "Enter username";
-
-                tbUsername.StateCommon.Content.Color1 = Color.DarkGray;
+                lblUsername.Visible = true;
             }
         }
 
@@ -62,55 +50,34 @@ namespace Warehouse.@in
         {
             if (tbEmail.Text == "")
             {
-                tbEmail.Text = "Enter email";
-
-                tbEmail.StateCommon.Content.Color1 = Color.DarkGray;
+                lblEmail.Visible = true;
             }
         }
 
         private void tbPassword_Enter(object sender, EventArgs e)
         {
-            if (tbPassword.Text == "Enter password")
-            {
-                tbPassword.Text = "";
-
-                tbPassword.StateCommon.Content.Color1 = Color.Black;
-                tbPassword.UseSystemPasswordChar = true;
-            }
+            lblPass.Visible = false;
         }
 
         private void tbPassword_Leave(object sender, EventArgs e)
         {
             if (tbPassword.Text == "")
             {
-                tbPassword.Text = "Enter password";
-
-                tbPassword.StateCommon.Content.Color1 = Color.DarkGray;
-                tbPassword.UseSystemPasswordChar = false;
+                lblPass.Visible = true;
 
             }
         }
 
         private void tbConfpass_Enter(object sender, EventArgs e)
         {
-            if (tbConfpass.Text == "Confirm password")
-            {
-                tbConfpass.Text = "";
-
-                tbConfpass.StateCommon.Content.Color1 = Color.Black;
-                tbConfpass.UseSystemPasswordChar = true;
-
-            }
+            lblConfpass.Visible = false;
         }
 
         private void tbConfpass_Leave(object sender, EventArgs e)
         {
             if (tbConfpass.Text == "")
             {
-                tbConfpass.Text = "Confirm password";
-
-                tbConfpass.StateCommon.Content.Color1 = Color.DarkGray;
-                tbConfpass.UseSystemPasswordChar = false;
+                lblConfpass.Visible = true;
 
             }
         }
@@ -206,6 +173,30 @@ namespace Warehouse.@in
         private void FormSignup_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+            tbUsername.Select();
+            lblUsername.Visible = false;
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+            tbEmail.Select();
+            lblEmail.Visible = false;
+        }
+
+        private void lblPass_Click(object sender, EventArgs e)
+        {
+            tbPassword.Select();
+            lblPass.Visible = false;
+        }
+
+        private void lblConfpass_Click(object sender, EventArgs e)
+        {
+            tbConfpass.Select();
+            lblConfpass.Visible = false;
         }
     }
 }
