@@ -18,38 +18,32 @@ namespace Warehouse.@in
         InitializeComponent();
     }
         private NpgsqlConnection conn2;
-        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=010800;Database=WarehouseinDb";
+        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=monopoki;Database=WarehouseinDb";
 
         public DataTable dt;
         public static NpgsqlCommand cmd;
         private string sql = null;
         private DataGridViewRow r;
 
-        //public void RefreshData()
-        //{
-        //    conn2 = new NpgsqlConnection(connstring2);
-        //    try
-        //    {
-        //        conn2.Open();
-        //        dgvData.DataSource = null;
-        //        sql = "select * from st_select()";
-        //        cmd = new NpgsqlCommand(sql, conn2);
-        //        dt = new DataTable();
-        //        NpgsqlDataReader rd = cmd.ExecuteReader();
-        //        dt.Load(rd);
-        //        dgvData.DataSource = dt;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error: " + ex.Message, "Failed Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
-
-        //protected override void OnShown(EventArgs e)
-        //{
-        //    base.OnShown(e);
-        //    RefreshData();
-        //}
+        public void RefreshData()
+        {
+            conn2 = new NpgsqlConnection(connstring2);
+            try
+            {
+                conn2.Open();
+                dgvData.DataSource = null;
+                sql = "select * from st_select()";
+                cmd = new NpgsqlCommand(sql, conn2);
+                dt = new DataTable();
+                NpgsqlDataReader rd = cmd.ExecuteReader();
+                dt.Load(rd);
+                dgvData.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Failed Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void tbName_TextChanged(object sender, EventArgs e)
         {
@@ -97,14 +91,13 @@ namespace Warehouse.@in
             }
             else
             {
-                var user = new Item
+                var items = new Item
                 {
-                    Items = tbName.Text,
+                    Items = tbName.Text.ToLower(),
                     Quantity = Convert.ToInt32(ndQuantity.Text),
                     Category = cbCategory.Text
-
                 };
-                checkItem(user);
+                checkItem(items);
 
             }
             
@@ -146,20 +139,18 @@ namespace Warehouse.@in
             try
             {
                 conn2.Open();
-                sql = "select * from checkitem(:_items, :_category)";
-                cmd = new NpgsqlCommand(sql, conn2);
+                sql = "select * from checkItem(:_items, :_category)";
                 cmd.Parameters.AddWithValue("_items", user.Items);
                 cmd.Parameters.AddWithValue(":_category", user.Category);
                 if((int)cmd.ExecuteScalar() == 1)
                 {
-                    if ((MessageBox.Show("Item " + user.Items + " Telah ada pada gudang,anda ingin menambahkan jumlah?","konfirmasi",
+                    if ((MessageBox.Show("Item " + user.Items + "Telah ada pada gudang", "Anda ingin menambahkan jumlah barang?",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes))
                     {
                         addNewItem(user);
                     }
                     else
                     {
-                        MessageBox.Show("Item tidak ditambahkan");
                         return;
                     }
 
@@ -171,8 +162,54 @@ namespace Warehouse.@in
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error!" + ex.Message + "why");
+                MessageBox.Show("Error!" + ex.Message);
             }
+
+        }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        private void tbExpire_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tbCapacity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbMaterial_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCapacity_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbMaterial_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void RequestForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

@@ -12,18 +12,19 @@ using Npgsql;
 namespace Warehouse.@in
 {
     public partial class FormStock : Form
-{
+    {
         public FormStock()
         {
             InitializeComponent();
         }
+
         private NpgsqlConnection conn;
         string connstring = "Host=localhost;Port=5432;Username=postgres;Password=010800;Database=WarehouseinDb";
         public DataTable dt;
         public static NpgsqlCommand cmd;
         private string sql = null;
         private DataGridViewRow r;
-        
+
         public void RefreshData()
         {
             conn = new NpgsqlConnection(connstring);
@@ -45,7 +46,7 @@ namespace Warehouse.@in
                 MessageBox.Show("Error: " + ex.Message, "GAGAL!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
@@ -60,12 +61,6 @@ namespace Warehouse.@in
         private void FormStock_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            string valueToSearch = tbSearch.Text.ToString();
-            searchData(valueToSearch);
         }
 
         public void searchData(string valueToSearch)
@@ -84,7 +79,13 @@ namespace Warehouse.@in
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            
+            string valueToSearch = tbSearch.Text.ToString().ToLower();
+            searchData(valueToSearch);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
