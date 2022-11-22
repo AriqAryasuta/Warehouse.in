@@ -25,14 +25,51 @@ namespace Warehouse.@in
         private string sql = null;
         private DataGridViewRow r;
 
-        public void RefreshData()
+
+        private void btnExport_Click_1(object sender, EventArgs e)
+        {
+            conn3 = new NpgsqlConnection(connstring3);
+            if (r == null)
+            {
+                MessageBox.Show("Please select items to be export!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("Are you sure to export item " + r.Cells["items"].Value.ToString() + "?", "Export Confirmation",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                try
+                {
+                    conn3.Open();
+                    sql = @"select * from st_delete(:_id)";
+                    cmd = new NpgsqlCommand(sql, conn3);
+                    cmd.Parameters.AddWithValue("_id", r.Cells["id"].Value.ToString());
+                    if ((int)cmd.ExecuteScalar() == 1)
+                    {
+                        MessageBox.Show("Export succeed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        conn3.Close();
+                        tbName.Text = tbQuantity.Text = tbCategory.Text = null;
+                        r = null;
+                    }
+                    btnFilter.PerformClick();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Failed Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+        public void searchData(string query, string valueToSearch)
         {
             conn3 = new NpgsqlConnection(connstring3);
             try
             {
                 conn3.Open();
                 dgvData.DataSource = null;
-                sql = "select * from st_select()";
+                sql = query;
                 cmd = new NpgsqlCommand(sql, conn3);
                 dt = new DataTable();
                 NpgsqlDataReader rd = cmd.ExecuteReader();
@@ -46,6 +83,54 @@ namespace Warehouse.@in
                 MessageBox.Show("Error: " + ex.Message, "Failed Information!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                r = dgvData.Rows[e.RowIndex];
+                tbName.Text = r.Cells["items"].Value.ToString();
+                tbCategory.Text = r.Cells["category"].Value.ToString();
+                tbQuantity.Text = r.Cells["quantity"].Value.ToString();
+            }
+        }
+
+        private void btnFilter_Click_1(object sender, EventArgs e)
+        {
+            string valueToFilter = "";
+            if (cbCategory2.SelectedItem != null)
+            {
+                valueToFilter = cbCategory2.SelectedItem.ToString();
+            }
+            else
+            {
+
+            }
+            string query = "select * from tb_stock where concat(lower(category)) like '%" + valueToFilter + "%'";
+            searchData(query, valueToFilter);
+        }
+
+        private void tbSearch2_TextChanged(object sender, EventArgs e)
+        {
+            string valueToSearch = tbSearch2.Text.ToString().ToLower();
+            string query = "select * from tb_stock where concat(lower(id),lower(items),lower(category),quantity) like '%" + valueToSearch + "%'";
+            searchData(query, valueToSearch);
+        }
+
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            cbCategory2.Text = "";
+            btnRefresh2.PerformClick();
+        }
+
+        private void btnRefresh2_Click(object sender, EventArgs e)
+        {
+            string valueToSearch = "";
+            string query = "select * from tb_stock where concat(lower(id),lower(items),lower(category),quantity) like '%" + valueToSearch + "%'";
+            searchData(query, valueToSearch);
+        }
+
         private void tbQuantity_TextChanged(object sender, EventArgs e)
         {
 
@@ -61,66 +146,12 @@ namespace Warehouse.@in
 
         }
 
-        private void btnExport_Click_1(object sender, EventArgs e)
-        {
-            conn3 = new NpgsqlConnection(connstring3);
-            if (r == null)
-            {
-                MessageBox.Show("Please select items to be export!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (MessageBox.Show("Are you sure to export item " + r.Cells["_items"].Value.ToString() + "?", "Export Confirmation",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                try
-                {
-                    conn3.Open();
-                    sql = @"select * from st_delete(:_id)";
-                    cmd = new NpgsqlCommand(sql, conn3);
-                    cmd.Parameters.AddWithValue("_id", r.Cells["_id"].Value.ToString());
-                    if ((int)cmd.ExecuteScalar() == 1)
-                    {
-                        MessageBox.Show("Export succeed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        conn3.Close();
-                        RefreshData();
-                        tbName.Text = tbQuantity.Text = tbCategory.Text = null;
-                        r = null;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message, "Failed Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                return;
-            }
-        }
-
-        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                r = dgvData.Rows[e.RowIndex];
-                tbName.Text = r.Cells["_items"].Value.ToString();
-                tbCategory.Text = r.Cells["_category"].Value.ToString();
-                tbQuantity.Text = r.Cells["_quantity"].Value.ToString();
-            }
-        }
-
         private void ExportForm_Shown(object sender, EventArgs e)
         {
 
         }
 
-        protected override void OnShown(EventArgs e)
-        {
-            base.OnShown(e);
-            RefreshData();
-        }
-
-        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbCategory2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -135,9 +166,5 @@ namespace Warehouse.@in
 
         }
 
-        private void btnFilter_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

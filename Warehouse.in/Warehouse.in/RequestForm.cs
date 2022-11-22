@@ -45,12 +45,6 @@ namespace Warehouse.@in
             }
         }
 
-        protected override void OnShown(EventArgs e)
-        {
-            base.OnShown(e);
-            RefreshData();
-        }
-
         private void tbName_TextChanged(object sender, EventArgs e)
         {
 
@@ -178,26 +172,6 @@ namespace Warehouse.@in
 
         }
 
-        private void RequestForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRefresh1_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void kryptonLabel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void tbExpire_TextChanged(object sender, EventArgs e)
         {
@@ -220,6 +194,21 @@ namespace Warehouse.@in
         }
 
         private void lbMaterial_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void RequestForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
