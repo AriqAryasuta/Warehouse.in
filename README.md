@@ -8,6 +8,9 @@ Ketua : Rizky Junian Nugroho - 20/460564/TK/51153 </br>
 Anggota 1 : Ariq Tsaqif Aryasuta - 20/460541/TK/51130 </br>
 Anggota 2 : Rizky Intan Nurlita - 20/456379/TK/50509 </br>
 
+## Link Video Demo
+- [Link Video Demo](https://drive.google.com/drive/folders/10nNpHR_mI2A1NTtrBQ6XXG4bclNpUvWA?usp=share_link)
+
 ## ❓Masalah yang diangkat
 Gudang perusahaan akan memiliki banyak sekali barang barang yang disimpan oleh perusahaan. Banyaknya barang ini bisa menimbulkan permasalahan inventarisasi barang gudang jika tidak dilakukan dengan pengawasan dan pengelolaan yang benar. Jika inventarisasi barang tidak bagus, maka dapat menyebabkan kerugian bagi perusahaan. Maka dari itu, diperlukan suatu sistem untuk menjaga inventaris barang agar tidak terjadi kesalahan yang menimbulkan kerugian
 
