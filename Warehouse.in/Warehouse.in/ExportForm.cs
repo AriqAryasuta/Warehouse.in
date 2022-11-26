@@ -18,7 +18,7 @@ namespace Warehouse.@in
         InitializeComponent();
     }
         private NpgsqlConnection conn3;
-        string connstring3 = "Host=localhost;Port=5432;Username=postgres;Password=atA_251201;Database=WarehouseinDb";
+        string connstring3 = "Host=localhost;Port=5432;Username=postgres;Password=monopoki;Database=WarehouseinDb";
 
         public DataTable dt;
         public static NpgsqlCommand cmd;
@@ -34,23 +34,31 @@ namespace Warehouse.@in
                 MessageBox.Show("Please select items to be export!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (MessageBox.Show("Are you sure to export item " + r.Cells["items"].Value.ToString() + "?", "Export Confirmation",
+            if (MessageBox.Show("Are you sure to export the item?", "Export Confirmation",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 try
                 {
                     conn3.Open();
-                    sql = @"select * from st_delete(:_id)";
+                    sql = @"select * from st_delete(:_id, :_quantity)";
                     cmd = new NpgsqlCommand(sql, conn3);
-                    cmd.Parameters.AddWithValue("_id", r.Cells["id"].Value.ToString());
-                    if ((int)cmd.ExecuteScalar() == 1)
+                    if(Int32.Parse(tbQuantity.Text) <= Int32.Parse(r.Cells["quantity"].Value.ToString()))
                     {
-                        MessageBox.Show("Export succeed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        conn3.Close();
-                        tbName.Text = tbQuantity.Text = tbCategory.Text = null;
-                        r = null;
+                        cmd.Parameters.AddWithValue("_id", r.Cells["id"].Value.ToString());
+                        cmd.Parameters.AddWithValue("_quantity", Int32.Parse(tbQuantity.Text));
+                        if ((int)cmd.ExecuteScalar() == 1)
+                        {
+                            MessageBox.Show("Export succeed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            conn3.Close();
+                            tbName.Text = tbQuantity.Text = tbCategory.Text = null;
+                            r = null;
+                        }
+                        btnFilter.PerformClick();
                     }
-                    btnFilter.PerformClick();
+                    else
+                    {
+                        MessageBox.Show("Item yang di export tidak bisa kurang dari jumlah stok yang tersisa", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -127,7 +135,7 @@ namespace Warehouse.@in
         private void btnRefresh2_Click(object sender, EventArgs e)
         {
             string valueToSearch = "";
-            string query = "select * from tb_stock where concat(lower(id),lower(items),lower(category),quantity) like '%" + valueToSearch + "%'";
+            string query = "select * from tb_stock";
             searchData(query, valueToSearch);
         }
 

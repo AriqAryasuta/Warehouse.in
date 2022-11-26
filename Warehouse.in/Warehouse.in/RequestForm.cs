@@ -20,7 +20,7 @@ namespace Warehouse.@in
     }
         
         private NpgsqlConnection conn2;
-        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=atA_251201;Database=WarehouseinDb";
+        string connstring2 = "Host=localhost;Port=5432;Username=postgres;Password=monopoki;Database=WarehouseinDb";
 
         public DataTable dt;
         public static NpgsqlCommand cmd;
@@ -107,6 +107,7 @@ namespace Warehouse.@in
 
                         };
                         addNewFood(items);
+                        MessageBox.Show("Item " + tbName.Text.ToString() + " berhasil ditambahkan", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     
                 }
@@ -127,6 +128,7 @@ namespace Warehouse.@in
                             Capacity = Convert.ToInt32(tbCapacity.Text),
                         };
                         addNewBeverage(items);
+                        MessageBox.Show("Item " + tbName.Text.ToString() + " berhasil ditambahkan", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     
                 }
@@ -147,6 +149,7 @@ namespace Warehouse.@in
                             MadeOf = tbMaterial.Text
                         };
                         addNewFurniture(items);
+                        MessageBox.Show("Item " + tbName.Text.ToString() + " berhasil ditambahkan", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     
                 }
@@ -178,7 +181,7 @@ namespace Warehouse.@in
                 cmd.Parameters.AddWithValue(":_date", user.ExpiredDate);
                 if ((int)cmd.ExecuteScalar() == 1)
                 {
-                    MessageBox.Show("Item" + user.Items +  "telah ditambahkan");
+                    MessageBox.Show("Item " + user.Items +  " telah ditambahkan sebelumnya");
                     conn2.Close();
                 }
             }
@@ -201,7 +204,7 @@ namespace Warehouse.@in
                 cmd.Parameters.AddWithValue(":_capacity", user.Capacity);
                 if ((int)cmd.ExecuteScalar() == 1)
                 {
-                    MessageBox.Show("Item" + user.Items + "telah ditambahkan");
+                    MessageBox.Show("Item " + user.Items + " telah ditambahkan");
                     conn2.Close();
                 }
             }
@@ -224,7 +227,7 @@ namespace Warehouse.@in
                 cmd.Parameters.AddWithValue(":_material", user.MadeOf);
                 if ((int)cmd.ExecuteScalar() == 1)
                 {
-                    MessageBox.Show("Item" + user.Items + "telah ditambahkan");
+                    MessageBox.Show("Item " + user.Items + " telah ditambahkan");
                     conn2.Close();
                 }
             }
@@ -246,7 +249,7 @@ namespace Warehouse.@in
                 cmd.Parameters.AddWithValue(":_category", user.Category);
                 if ((int)cmd.ExecuteScalar() == 1)
                 {
-                    MessageBox.Show("Item" + user.Items + "telah ditambahkan");
+                    MessageBox.Show("Item " + user.Items + " telah ditambahkan");
                     conn2.Close();
                 }
                 else
@@ -268,6 +271,11 @@ namespace Warehouse.@in
         private void btnRefresh_Click_1(object sender, EventArgs e)
         {
             RefreshData();
+        }
+
+        private void RequestForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
