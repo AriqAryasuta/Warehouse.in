@@ -8,8 +8,9 @@ Ketua : Rizky Junian Nugroho - 20/460564/TK/51153 </br>
 Anggota 1 : Ariq Tsaqif Aryasuta - 20/460541/TK/51130 </br>
 Anggota 2 : Rizky Intan Nurlita - 20/456379/TK/50509 </br>
 
-## Link Video Demo
+## 💿 Dokumentasi
 - [Link Video Demo](https://drive.google.com/drive/folders/10nNpHR_mI2A1NTtrBQ6XXG4bclNpUvWA?usp=share_link)
+- [Link PPT](https://www.canva.com/design/DAFSiz7_xMk/uALauw0YykH9a9leCJUagw/view?utm_content=DAFSiz7_xMk&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu)
 
 ## ❓Masalah yang diangkat
 Gudang perusahaan akan memiliki banyak sekali barang barang yang disimpan oleh perusahaan. Banyaknya barang ini bisa menimbulkan permasalahan inventarisasi barang gudang jika tidak dilakukan dengan pengawasan dan pengelolaan yang benar. Jika inventarisasi barang tidak bagus, maka dapat menyebabkan kerugian bagi perusahaan. Maka dari itu, diperlukan suatu sistem untuk menjaga inventaris barang agar tidak terjadi kesalahan yang menimbulkan kerugian
@@ -23,6 +24,7 @@ Sebagai solusi untuk meningkatkan kemudahan dalam inventarisasi barang gudang, t
 - Input data barang
 - Output data barang
 - Filtering data barang berdasarkan kategori
+- Searching data barang berdasarkan input keyword
 
 ## Aplikasi sejenis
 - Odoo
